@@ -40,6 +40,12 @@ const branches = {
   }
 };
 
+// The photos are stored in the repository root, not in an images/ directory.
+// Keep older page references working by resolving those URLs to the actual files.
+function resolveImagePath(path) {
+  return typeof path === 'string' ? path.replace(/^images\//, '') : path;
+}
+
 let currentBranchKey = 'kibwezi';
 
 function setText(id, value) { const el = document.getElementById(id); if (el) el.textContent = value; }
@@ -81,7 +87,7 @@ function switchBranch(key) {
   if (whatsapp) whatsapp.href = 'https://wa.me/' + b.phone.replace('+', '') + '?text=' + encodeURIComponent('Hello East View Hotel, I would like to make an enquiry.');
 
   const preview = document.getElementById('heroPreviewImg');
-  if (preview) preview.src = b.previewImg;
+  if (preview) preview.src = resolveImagePath(b.previewImg);
   setText('heroPreviewTitle', b.previewTitle);
   setText('heroPreviewDesc', b.previewDesc);
 
@@ -173,7 +179,7 @@ function handleBookingSubmit(event) {
   const selected = b.rooms.find(item => item.name === room);
   if (selected) rate = selected.rate;
   const reference = 'EVH-' + Math.floor(100000 + Math.random() * 900000);
-  const message = 'Hello ' + b.name + ',\nI would like to make a room reservation.\nRef: ' + reference + '\nBranch: ' + b.name + '\nName: ' + name + '\nPhone: ' + phone + '\nCheck-in: ' + checkIn + '\nCheck-out: ' + checkOut + ' (' + nights + ' night' + (nights > 1 ? 's' : '') + ')\nRoom Category: ' + room + '\nGuests: ' + guests + '\nEstimated Total: KES ' + (nights * rate).toLocaleString('en-US') + '\nSpecial Request: ' + request + '\nThank you.';
+  const message = 'Hello ' + b.name + ',\nI would like to make a room reservation.\nRef: ' + reference + '\nBranch: ' + b.name + '\nName: ' + name + '\nPhone: ' + phone + '\nCheck-in: ' + checkIn + '\nCheck-out: ' + checkOut + '\nRoom: ' + room + '\nGuests: ' + guests + '\nNights: ' + nights + '\nEstimated total: KES ' + (rate * nights).toLocaleString('en-US') + '\nSpecial request: ' + request;
   window.open('https://wa.me/' + b.phone.replace('+', '') + '?text=' + encodeURIComponent(message), '_blank');
 }
 
@@ -184,7 +190,7 @@ function orderDiningOnWhatsApp() {
 
 function openLightbox(src, title, desc) {
   const image = document.getElementById('lightboxImg');
-  if (image) image.src = src;
+  if (image) image.src = resolveImagePath(src);
   setText('lightboxTitle', title);
   setText('lightboxDesc', desc);
   document.getElementById('lightboxModal')?.classList.add('active');
@@ -252,3 +258,11 @@ if (document.getElementById('bookingBranch')) {
   }
   calculateBookingTotal();
 }
+
+// Resolve static image references across all pages (including hero backgrounds).
+document.querySelectorAll('img[src]').forEach(image => {
+  image.src = resolveImagePath(image.getAttribute('src'));
+});
+document.querySelectorAll('[style*="images/"]').forEach(element => {
+  element.style.backgroundImage = element.style.backgroundImage.replace(/images\//g, '');
+});
