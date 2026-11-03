@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIBWEZI EASTVIEW | Kibwezi &amp; Wote (Near Kaiti River)</title>
+  <meta name="description" content="KIBWEZI EASTVIEW - comfortable accommodation with four-poster canopy beds, delicious dining, and warm hospitality across 2 branches in Kibwezi and Wote near Kaiti River, Makueni County, Kenya.">
+  <meta name="keywords" content="KIBWEZI EASTVIEW, Kibwezi hotel, Wote hotel, Kaiti River hotel, accommodation Makueni, canopy beds, conference hall, buffet catering">
+  <meta name="author" content="Dev Inno">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  
+  
+</head>
+<body>
+
+  <!-- TOP BAR WITH 2 BRANCHES -->
+  <div class="topbar">
+    <div class="container topbar-content">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-weight: 700; color: var(--gold); font-size: 11px; text-transform: uppercase;">Select Branch:</span>
+        <div class="topbar-branch-toggle">
+          <button id="btnBranchKibwezi" class="active" onclick="switchBranch('kibwezi')">Kibwezi (1100, 1500, 2000)</button>
+          <button id="btnBranchWote" onclick="switchBranch('wote')">Wote (2500, 3500)</button>
+        </div>
+      </div>
+      <div class="topbar-links">
+        <a id="topbarPhone" href="tel:+254702121550">
+          <i class="fa-solid fa-phone" style="color: var(--gold); margin-right: 5px;"></i>
+          <span id="topbarPhoneText">+254 702 121550</span>
+        </a>
+        <a href="mailto:info@eastviewhotel.co.ke">
+          <i class="fa-solid fa-envelope" style="color: var(--gold); margin-right: 5px;"></i>
+          info@eastviewhotel.co.ke
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar container">
+      <a href="#home" class="logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-hotel"></i>
+        </div>
+        <div class="logo-text">
+          <h2>KIBWEZI EASTVIEW</h2>
+          <small id="logoBranchSubtitle">Kibwezi &amp; Wote (near Kaiti River)</small>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="facilities.html">Facilities</a></li>
+        <li><a href="restaurant.html">Food &amp; Catering</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="locations.html">Branches</a></li>
+        <li><a href="booking.html" class="nav-button">Book Now</a></li>
+      </ul>
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO (4 ALTERNATING BACKGROUND IMAGES) -->
+  <section class="hero" id="home">
+    <div class="hero-bg-slide active" id="heroSlide0" style="background-image: url('images/image-002.webp');"></div>
+    <div class="hero-bg-slide" id="heroSlide1" style="background-image: url('images/image-003.webp');"></div>
+    <div class="hero-bg-slide" id="heroSlide2" style="background-image: url('images/image-001.webp');"></div>
+    <div class="hero-bg-slide" id="heroSlide3" style="background-image: url('images/image-004.webp');"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-main">
+      <div>
+        <div class="hero-badge">
+          <i class="fa-solid fa-building"></i>
+          <span>Two Branches: Kibwezi &amp; Wote (Near Kaiti River)</span>
+        </div>
+        <h1>Comfort, Hospitality &amp; <em>Delicious Dining</em></h1>
+        <p>Experience warm Kenyan hospitality, signature four-poster canopy beds, and delicious food at our Kibwezi and Wote branches in Makueni County.</p>
+        
+        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+          <a href="booking.html" class="btn btn-primary">
+            <i class="fa-solid fa-calendar-check"></i>
+            Book Your Stay
+          </a>
+          <a href="rooms.html" class="btn btn-outline">
+            View All Rooms
+          </a>
+        </div>
+
+        <!-- 4 Hero Background Slide Indicators -->
+        <div class="hero-indicators">
+          <span style="font-size: 11px; color: #cbd5e1; margin-right: 5px;">Views:</span>
+          <button class="hero-dot active" onclick="setHeroSlide(0)" title="Kibwezi Aerial Panorama"></button>
+          <button class="hero-dot" onclick="setHeroSlide(1)" title="Wote Branch Exterior"></button>
+          <button class="hero-dot" onclick="setHeroSlide(2)" title="Wote at Night"></button>
+          <button class="hero-dot" onclick="setHeroSlide(3)" title="Kibwezi Roadside Entrance"></button>
+          <span id="heroSlideLabel" style="font-size: 11px; color: var(--gold); font-weight: 700; margin-left: 8px;">Kibwezi Aerial Panorama</span>
+        </div>
+      </div>
+
+      <div class="hero-preview-card">
+        <div class="hero-preview-img">
+          <img id="heroPreviewImg" src="images/image-005.webp" alt="KIBWEZI EASTVIEW Canopy Bedroom">
+        </div>
+        <div class="hero-preview-body">
+          <h4 id="heroPreviewTitle">Kibwezi Executive Room (KES 2,000)</h4>
+          <p id="heroPreviewDesc">Four-poster bed with protective mosquito netting, ensuite bathroom &amp; Wi-Fi.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-bottom">
+      <div class="container hero-features">
+        <div><i class="fa-solid fa-bed"></i> Canopy Beds (KES 1,100 – 3,500)</div>
+        <div><i class="fa-solid fa-utensils"></i> Fresh Food &amp; Buffet Catering</div>
+        <div><i class="fa-solid fa-tree"></i> Garden Wildlife Scenery</div>
+        <div><i class="fa-solid fa-shield-halved"></i> 24/7 Security &amp; Parking</div>
+        <div><i class="fa-solid fa-wifi"></i> Free High-Speed Wi-Fi</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <div class="about-badge">
+            <div class="about-badge-icon">EV</div>
+            <div>
+              <strong style="color: var(--primary); font-size: 16px;">KIBWEZI EASTVIEW</strong><br>
+              <small style="color: var(--grey); text-transform: uppercase;">Makueni Hospitality</small>
+            </div>
+          </div>
+          <div class="about-main-img">
+            <img src="images/image-003.webp" alt="KIBWEZI EASTVIEW Building Exterior">
+          </div>
+          <div class="about-inset-img">
+            <img src="images/image-006.webp" alt="Garden Wildlife Scenery">
+          </div>
+        </div>
+        <div class="about-text">
+          <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 12px;">About Our Hotel</span>
+          <h2>A Home Away From Home in Makueni County</h2>
+          <p>KIBWEZI EASTVIEW provides guests with a comfortable and welcoming environment for business, leisure, dining, and overnight accommodation.</p>
+          <p>We proudly operate two locations: our <strong>Kibwezi Branch</strong> along the Kibwezi–Kitui Road (rooms at KES 1,100, 1,500, and 2,000), and our second branch in <strong>Wote</strong> along the Machakos–Wote Road near Kaiti River (rooms at KES 2,500 and 3,500).</p>
+          <ul class="check-list">
+            <li><i class="fa-solid fa-circle-check"></i> Canopy Beds with Mosquito Netting</li>
+            <li><i class="fa-solid fa-circle-check"></i> Fresh Food, Tilapia &amp; Buffet Catering</li>
+            <li><i class="fa-solid fa-circle-check"></i> Attentive 24/7 Guest Reception</li>
+            <li><i class="fa-solid fa-circle-check"></i> Free Wi-Fi &amp; Secure Parking</li>
+            <li><i class="fa-solid fa-circle-check"></i> Kibwezi Branch (1100, 1500, 2000)</li>
+            <li><i class="fa-solid fa-circle-check"></i> Wote Branch (2500, 3500)</li>
+          </ul>
+          <div style="margin-top: 25px;">
+            <a href="booking.html" class="btn btn-primary">Plan Your Stay</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- HIGHLIGHT FEATURE CARDS (CONFERENCE & SCENERY) -->
+      <div class="highlight-cards">
+        <div class="highlight-card">
+          <div class="highlight-card-img">
+            <img src="images/image-007.webp" alt="Conference &amp; Meeting Hall">
+          </div>
+          <div class="highlight-card-body">
+            <span style="font-size: 11px; font-weight: 700; color: var(--primary); text-transform: uppercase;">Conferencing</span>
+            <h4>Spacious Conference Hall</h4>
+            <p>Modern meeting hall equipped with presentation screen, seminar tables, and complete catering support for delegates.</p>
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-card-img">
+            <img src="images/image-006.webp" alt="Garden Wildlife Scenery">
+          </div>
+          <div class="highlight-card-body">
+            <span style="font-size: 11px; font-weight: 700; color: var(--primary); text-transform: uppercase;">Relaxing Grounds</span>
+            <h4>Garden Wildlife Scenery</h4>
+            <p>Peaceful hotel courtyard garden featuring life-size zebra and rhino sculptures nestled within lush green surroundings.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-item">
+          <h3>2</h3>
+          <strong>Branches</strong>
+          <span>Kibwezi &amp; Wote</span>
+        </div>
+        <div class="stat-item">
+          <h3>5</h3>
+          <strong>Room Options</strong>
+          <span>KES 1,100 to 3,500</span>
+        </div>
+        <div class="stat-item">
+          <h3>24/7</h3>
+          <strong>Guest Support</strong>
+          <span>Front Desk &amp; Rooms</span>
+        </div>
+        <div class="stat-item">
+          <h3>Kaiti</h3>
+          <strong>River Location</strong>
+          <span>Wote-Machakos Road</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOMS SECTION (KIBWEZI: 1100, 1500, 2000 | WOTE: 2500, 3500) -->
+  <section id="rooms" class="rooms">
+    <div class="container">
+      <div class="section-title">
+        <span>Accommodation</span>
+        <h2>Rooms for Both Branches</h2>
+        <p>Select a branch to view room categories and exact rates. All rooms feature our signature four-poster canopy beds with mosquito nets.</p>
+      </div>
+
+      <div class="branch-room-tabs">
+        <button id="tabRoomKibwezi" class="active" onclick="filterRoomDisplay('kibwezi')">
+          <i class="fa-solid fa-building"></i> Kibwezi Branch (KES 1,100 / 1,500 / 2,000)
+        </button>
+        <button id="tabRoomWote" onclick="filterRoomDisplay('wote')">
+          <i class="fa-solid fa-building"></i> Wote Branch (KES 2,500 / 3,500)
+        </button>
+      </div>
+
+      <!-- KIBWEZI ROOMS CONTAINER (3 CATEGORIES: 1100, 1500, 2000) -->
+      <div class="rooms-grid" id="kibweziRoomsGrid">
+        <!-- Kibwezi 1100 -->
+        <div class="room-card">
+          <div class="room-image">
+            <img src="images/image-008.webp" alt="Kibwezi Economy Room Bed">
+            <div class="room-badge">Kibwezi • Budget</div>
+            <div class="room-price"><strong>KES 1,100</strong> / Night</div>
+          </div>
+          <div class="room-content">
+            <div>
+              <h3>Kibwezi Economy Room</h3>
+              <p>Clean and affordable accommodation featuring a wooden four-poster canopy bed with protective mosquito netting, private ensuite, and Wi-Fi.</p>
+              <div class="room-tags">
+                <span><i class="fa-solid fa-bed"></i> Canopy Bed</span>
+                <span><i class="fa-solid fa-wifi"></i> Free Wi-Fi</span>
+                <span><i class="fa-solid fa-shower"></i> Ensuite Shower</span>
+              </div>
+            </div>
+            <a href="booking.html" onclick="selectRoomForBooking('kibwezi', 'Kibwezi Economy Room (KES 1,100)')" class="btn btn-primary" style="width: 100%;">
+              Reserve KES 1,100
+            </a>
+          </div>
+        </div>
+
+        <!-- Kibwezi 1500 -->
+        <div class="room-card">
+          <div class="room-image">
+            <img src="images/image-009.webp" alt="Kibwezi Standard Room Bed">
+            <div class="room-badge">Kibwezi • Standard</div>
+            <div class="room-price"><strong>KES 1,500</strong> / Night</div>
+          </div>
+          <div class="room-content">
+            <div>
+              <h3>Kibwezi Standard Room</h3>
+              <p>Comfortable room featuring our signature four-poster canopy bed, flat screen TV, work table, clean linens, and private hot water shower.</p>
+              <div class="room-tags">
+                <span><i class="fa-solid fa-bed"></i> Canopy Bed</span>
+                <span><i class="fa-solid fa-tv"></i> Flat Screen TV</span>
+                <span><i class="fa-solid fa-wifi"></i> Free Wi-Fi</span>
+                <span><i class="fa-solid fa-shower"></i> Hot Shower</span>
+              </div>
+            </div>
+            <a href="booking.html" onclick="selectRoomForBooking('kibwezi', 'Kibwezi Standard Room (KES 1,500)')" class="btn btn-primary" style="width: 100%;">
+              Reserve KES 1,500
+            </a>
+          </div>
+        </div>
+
+        <!-- Kibwezi 2000 -->
+        <div class="room-card">
+          <div class="room-image">
+            <img src="images/image-005.webp" alt="Kibwezi Executive Room Bed">
+            <div class="room-badge">Kibwezi • Executive</div>
+            <div class="room-price"><strong>KES 2,000</strong> / Night</div>
+          </div>
+          <div class="room-content">
+            <div>
+              <h3>Kibwezi Executive Room</h3>
+              <p>Our top-tier Kibwezi room with spacious layout, option for twin canopy beds or king bed, TV entertainment, and priority room service.</p>
+              <div class="room-tags">
+                <span><i class="fa-solid fa-bed"></i> King / Twin Beds</span>
+                <span><i class="fa-solid fa-tv"></i> Flat Screen TV</span>
+                <span><i class="fa-solid fa-wifi"></i> High-Speed Wi-Fi</span>
+                <span><i class="fa-solid fa-bell-concierge"></i> Room Service</span>
+              </div>
+            </div>
+            <a href="booking.html" onclick="selectRoomForBooking('kibwezi', 'Kibwezi Executive Room (KES 2,000)')" class="btn btn-primary" style="width: 100%;">
+              Reserve KES 2,000
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- WOTE ROOMS CONTAINER (2 CATEGORIES: 2500, 3500) -->
+      <div class="rooms-grid two-cols" id="woteRoomsGrid" style="display: none;">
+        <!-- Wote 2500 -->
+        <div class="room-card">
+          <div class="room-image">
+            <img src="images/image-010.webp" alt="Wote Standard Room Bed">
+            <div class="room-badge">Wote • Standard</div>
+            <div class="room-price"><strong>KES 2,500</strong> / Night</div>
+          </div>
+          <div class="room-content">
+            <div>
+              <h3>Wote Standard Room</h3>
+              <p>Tranquil room at our Wote branch along the Machakos–Wote Road near Kaiti River, with canopy bed, mosquito net, work desk &amp; chair, and hot shower.</p>
+              <div class="room-tags">
+                <span><i class="fa-solid fa-bed"></i> Four-Poster Bed</span>
+                <span><i class="fa-solid fa-laptop"></i> Work Desk &amp; Chair</span>
+                <span><i class="fa-solid fa-wifi"></i> Free Wi-Fi</span>
+                <span><i class="fa-solid fa-shower"></i> Hot Shower</span>
+              </div>
+            </div>
+            <a href="booking.html" onclick="selectRoomForBooking('wote', 'Wote Standard Room (KES 2,500)')" class="btn btn-primary" style="width: 100%;">
+              Reserve KES 2,500
+            </a>
+          </div>
+        </div>
+
+        <!-- Wote 3500 -->
+        <div class="room-card">
+          <div class="room-image">
+            <img src="images/image-011.webp" alt="Wote Executive Room Bed">
+            <div class="room-badge">Wote • Executive</div>
+            <div class="room-price"><strong>KES 3,500</strong> / Night</div>
+          </div>
+          <div class="room-content">
+            <div>
+              <h3>Wote Executive Room</h3>
+              <p>Superior executive suite at our Wote branch featuring luxury canopy drapes, plush bedding, reading nook, scenic river atmosphere, and breakfast included.</p>
+              <div class="room-tags">
+                <span><i class="fa-solid fa-bed"></i> King Canopy Bed</span>
+                <span><i class="fa-solid fa-mug-hot"></i> Breakfast Included</span>
+                <span><i class="fa-solid fa-wifi"></i> High-Speed Wi-Fi</span>
+                <span><i class="fa-solid fa-mountain-sun"></i> River Breeze</span>
+              </div>
+            </div>
+            <a href="booking.html" onclick="selectRoomForBooking('wote', 'Wote Executive Room (KES 3,500)')" class="btn btn-primary" style="width: 100%;">
+              Reserve KES 3,500
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACILITIES -->
+  <section id="facilities" class="facilities">
+    <div class="container">
+      <div class="section-title">
+        <span>Hotel Amenities</span>
+        <h2>Everything You Need For A Relaxing Stay</h2>
+        <p>Equipped facilities across our Kibwezi and Wote branches.</p>
+      </div>
+
+      <div class="facilities-grid">
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-bed"></i></div>
+          <h3>Canopy Bed Rooms</h3>
+          <p>Rooms with mosquito netting across KES 1,100 to 3,500.</p>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-wifi"></i></div>
+          <h3>Free Wi-Fi</h3>
+          <p>High-speed internet in all rooms and common spaces.</p>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-square-parking"></i></div>
+          <h3>Secure Parking</h3>
+          <p>Well-guarded parking bay with 24/7 security watch.</p>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-utensils"></i></div>
+          <h3>Food &amp; Catering</h3>
+          <p>Fresh whole tilapia, grills, stews, and buffet catering.</p>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-users"></i></div>
+          <h3>Conference Hall</h3>
+          <p>Equipped meeting space with screen for corporate seminars.</p>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-tree"></i></div>
+          <h3>Garden Wildlife</h3>
+          <p>Serene courtyard garden with zebra &amp; rhino sculptures.</p>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-bell-concierge"></i></div>
+          <h3>24/7 Front Desk</h3>
+          <p>Prompt reception, assistance, and room delivery.</p>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>24/7 Security</h3>
+          <p>Round-the-clock peace of mind and compound safety.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOD & CATERING SHOWCASE (MENU REMOVED) -->
+  <section id="restaurant" class="restaurant">
+    <div class="container">
+      <div class="restaurant-grid">
+        <div class="restaurant-img-box">
+          <img src="images/image-012.jpg" alt="Delicious Food &amp; Buffet Catering">
+          <div class="restaurant-img-caption">
+            <h4 style="font-size: 20px;">Fresh Banquet Buffet &amp; Dining</h4>
+            <p style="font-size: 13px; color: #e2e8f0;">Succulent chicken, whole tilapia, beef stew, rice dishes &amp; vegetables.</p>
+          </div>
+        </div>
+        <div>
+          <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 12px;">Delicious Dining &amp; Catering</span>
+          <h2 style="font-size: 38px; margin: 10px 0 16px;">Good Food. Great Moments.</h2>
+          <p style="color: var(--grey); font-size: 15px;">Enjoy freshly prepared Kenyan meals, our signature whole lake tilapia, pan-fried mbuzi, and full banquet catering for events and meetings.</p>
+          
+          <ul class="food-feature-list">
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <strong style="color: var(--dark);">Signature Whole Tilapia with Fresh Greens</strong>
+                <p style="color: var(--grey); font-size: 13px;">Fresh lake tilapia fried or wet-fried with rich tomato salsa and sautÃ©ed vegetables.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <strong style="color: var(--dark);">Nyama Choma &amp; Mbuzi Fry Specials</strong>
+                <p style="color: var(--grey); font-size: 13px;">Tender goat meat pan-fried with onions, cilantro, ugali, and fresh kachumbari.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <strong style="color: var(--dark);">Banquet &amp; Event Buffet Catering</strong>
+                <p style="color: var(--grey); font-size: 13px;">Full event catering service for seminars, family gatherings, conferences, and tour groups.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <strong style="color: var(--dark);">Breakfast &amp; Spiced African Masala Tea</strong>
+                <p style="color: var(--grey); font-size: 13px;">Hot breakfast cooked to order, chilled fresh fruit juices, and fragrant milk tea.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div style="margin-top: 25px;">
+            <a href="javascript:void(0)" onclick="orderDiningOnWhatsApp()" class="btn btn-primary">
+              <i class="fa-brands fa-whatsapp"></i>
+              Order Food / Inquire on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <div class="section-title">
+        <span>Photo Gallery</span>
+        <h2>Experience KIBWEZI EASTVIEW</h2>
+        <p>Real photographs of our hotel accommodations, food catering, conference hall, and premises.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox('images/image-002.webp', 'Kibwezi KIBWEZI EASTVIEW Aerial Panorama', 'Stunning aerial view of Kibwezi branch hotel compound along the main road')">
+          <img src="images/image-002.webp" alt="Kibwezi Aerial Panorama">
+          <div class="gallery-caption">
+            <h4>Aerial Panorama</h4>
+            <p>Kibwezi KIBWEZI EASTVIEW Highway View</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/image-003.webp', 'KIBWEZI EASTVIEW Wote Exterior', 'Modern multi-story hotel building with reflective blue glass in Wote')">
+          <img src="images/image-003.webp" alt="Wote Building Exterior">
+          <div class="gallery-caption">
+            <h4>Wote Hotel Building</h4>
+            <p>Modern blue glass architecture</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/image-007.webp', 'Conference &amp; Meeting Hall', 'Spacious seminar hall equipped with audio-visual equipment and tablecloths')">
+          <img src="images/image-007.webp" alt="Conference Hall">
+          <div class="gallery-caption">
+            <h4>Conference Hall</h4>
+            <p>Equipped meeting space for seminars</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/image-012.jpg', 'Buffet &amp; Event Catering', 'Delicious banquet buffet featuring roasted meats, tilapia, and accompaniments')">
+          <img src="images/image-012.jpg" alt="Food Catering">
+          <div class="gallery-caption">
+            <h4>Food &amp; Catering</h4>
+            <p>Banquet buffet for events &amp; guests</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/image-006.webp', 'Garden Wildlife Scenery', 'Hotel courtyard garden featuring zebra and rhino sculptures')">
+          <img src="images/image-006.webp" alt="Animal Scenery">
+          <div class="gallery-caption">
+            <h4>Animal Scenery</h4>
+            <p>Zebra &amp; rhino garden sculptures</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/image-001.webp', 'Wote Branch at Night', 'Warm evening ambiance and secure compound with decorative lighting')">
+          <img src="images/image-001.webp" alt="Wote at Night">
+          <div class="gallery-caption">
+            <h4>Wote at Night</h4>
+            <p>Illuminated premises &amp; secure parking</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/image-011.webp', 'Wote Executive Room (KES 3,500)', 'Luxurious four-poster canopy bedroom with pink drapery and ensuite')">
+          <img src="images/image-011.webp" alt="Wote Executive Room">
+          <div class="gallery-caption">
+            <h4>Wote Executive (3,500)</h4>
+            <p>King canopy bed with drapery</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/image-005.webp', 'Kibwezi Executive Room (KES 2,000)', 'Four-poster canopy bed room with TV and modern amenities in Kibwezi')">
+          <img src="images/image-005.webp" alt="Kibwezi Executive Room">
+          <div class="gallery-caption">
+            <h4>Kibwezi Executive (2,000)</h4>
+            <p>Spacious canopy bed &amp; TV</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" onclick="openLightbox('images/image-013.jpg', 'Front Desk &amp; Bar Lounge', 'Welcoming reception counter, beverage bar, and guest service area')">
+          <img src="images/image-013.jpg" alt="Reception &amp; Bar">
+          <div class="gallery-caption">
+            <h4>Reception &amp; Bar</h4>
+            <p>24/7 front desk &amp; lounge</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox" id="lightboxModal" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <div style="text-align: center; max-width: 900px;" onclick="event.stopPropagation()">
+      <img id="lightboxImg" class="lightbox-img" src="" alt="Enlarged photo">
+      <h3 id="lightboxTitle" style="color: white; margin-top: 15px; font-size: 20px;"></h3>
+      <p id="lightboxDesc" style="color: #cbd5e1; font-size: 14px; margin-top: 4px;"></p>
+    </div>
+  </div>
+
+  <!-- BOOKING SECTION -->
+  <section id="booking" class="booking">
+    <div class="container booking-box">
+      <div class="section-title" style="margin-bottom: 35px;">
+        <span style="background: rgba(255, 255, 255, 0.15); color: var(--gold); border: 1px solid rgba(255, 255, 255, 0.2);">Reservations</span>
+        <h2 style="color: white;">Reserve Your Stay</h2>
+        <p style="color: #cbd5e1;">Direct booking with instant WhatsApp confirmation to your selected branch.</p>
+      </div>
+
+      <form class="booking-form" id="bookingForm" onsubmit="handleBookingSubmit(event)">
+        <div class="form-group full">
+          <label>Select Hotel Branch *</label>
+          <select id="bookingBranch" onchange="updateBookingBranch(this.value)">
+            <option value="kibwezi">Kibwezi Branch (KES 1,100 / 1,500 / 2,000)</option>
+            <option value="wote">Wote Branch (KES 2,500 / 3,500)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="guestName" placeholder="Your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" id="guestPhone" placeholder="07XX XXX XXX" required>
+        </div>
+
+        <div class="form-group">
+          <label>Check-in Date *</label>
+          <input type="date" id="checkIn" required onchange="calculateBookingTotal()">
+        </div>
+
+        <div class="form-group">
+          <label>Check-out Date *</label>
+          <input type="date" id="checkOut" required onchange="calculateBookingTotal()">
+        </div>
+
+        <div class="form-group">
+          <label>Room Category *</label>
+          <select id="roomType" onchange="calculateBookingTotal()">
+            <!-- Populated dynamically via JS -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Number of Guests *</label>
+          <select id="guests">
+            <option value="1 Guest">1 Guest</option>
+            <option value="2 Guests" selected>2 Guests</option>
+            <option value="3 Guests">3 Guests</option>
+            <option value="4+ Guests">4+ Guests (Group)</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <label>Special Request</label>
+          <textarea id="specialRequest" placeholder="Twin beds, late arrival, ground floor room, conference catering..."></textarea>
+        </div>
+
+        <div class="form-group full booking-summary">
+          <div>
+            <span>Estimated Total:</span>
+            <div id="bookingSummaryDetails" style="font-size: 12px; color: var(--grey); font-weight: normal;">1 night stay</div>
+          </div>
+          <strong id="bookingTotalAmount">KES 1,500</strong>
+        </div>
+
+        <div class="form-group full">
+          <button type="submit" class="btn btn-primary booking-submit" style="padding: 16px; width: 100%; font-size: 16px; background: #25d366;">
+            <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i>
+            Send Booking
+          </button>
+          <p style="font-size: 11px; text-align: center; color: var(--grey); margin-top: 8px;">
+            No advance reservation fees required. Pay on arrival via M-Pesa or Cash.
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS - ONLY 3 -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <span>Guest Feedback</span>
+        <h2>What Our Guests Say</h2>
+        <p>Verified reviews from travellers who stayed at KIBWEZI EASTVIEW.</p>
+        <div style="margin-top: 15px;">
+          <button onclick="openReviewModal()" class="btn btn-outline" style="color: var(--dark); border-color: #d1d5db; background: white; font-size: 13px; padding: 8px 18px;">
+            <i class="fa-solid fa-pen-to-square" style="color: var(--primary);"></i>
+            Leave a Guest Review
+          </button>
+        </div>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- Review 1 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+            <p>"A comfortable place to stay with friendly service and good food. The bed was really comfortable, hot water worked perfectly, and the staff made us feel right at home. I would definitely visit again."</p>
+          </div>
+          <div class="guest">
+            <div class="guest-avatar">JM</div>
+            <div>
+              <strong style="display: block; font-size: 14px; color: var(--dark);">James M.</strong>
+              <small style="color: var(--grey);">Kibwezi Visitor</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+            <p>"The restaurant offers delicious meals and the atmosphere is welcoming. Having reliable fast Wi-Fi and quiet rooms made my trip so seamless. Excellent hospitality."</p>
+          </div>
+          <div class="guest">
+            <div class="guest-avatar">AN</div>
+            <div>
+              <strong style="display: block; font-size: 14px; color: var(--dark);">Angela N.</strong>
+              <small style="color: var(--grey);">Business Traveller</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="testimonial-card">
+          <div>
+            <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
+            <p>"A convenient stop in Kibwezi with comfortable rooms and excellent hospitality. The secure parking gave us complete peace of mind, and the tilapia and chips at the restaurant was superb!"</p>
+          </div>
+          <div class="guest">
+            <div class="guest-avatar">DK</div>
+            <div>
+              <strong style="display: block; font-size: 14px; color: var(--dark);">David K.</strong>
+              <small style="color: var(--grey);">Guest</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBMIT REVIEW MODAL (Non-crashing, safe feedback) -->
+  <div class="modal" id="reviewModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeReviewModal()">&times;</button>
+      <h3 style="font-size: 22px; margin-bottom: 8px;">Share Your Experience</h3>
+      <p style="font-size: 13px; color: var(--grey); margin-bottom: 18px;">Submit your comments for hotel management review.</p>
+      
+      <div id="reviewSuccessMsg" style="display: none; padding: 20px; background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 12px; text-align: center; color: #065f46;">
+        <i class="fa-solid fa-circle-check" style="font-size: 32px; color: #059669; margin-bottom: 8px;"></i>
+        <h4>Thank You!</h4>
+        <p style="font-size: 13px;">Your review has been submitted for management review.</p>
+      </div>
+
+      <form id="reviewForm" onsubmit="handleReviewSubmit(event)">
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label>Your Name</label>
+          <input type="text" id="reviewerName" required placeholder="e.g. Samuel Mutua">
+        </div>
+        <div class="form-group" style="margin-bottom: 12px;">
+          <label>Rating</label>
+          <select id="reviewerRating">
+            <option value="5">â˜…â˜…â˜…â˜…â˜… (5 Stars - Excellent)</option>
+            <option value="4">â˜…â˜…â˜…â˜…â˜† (4 Stars - Very Good)</option>
+            <option value="3">â˜…â˜…â˜…â˜†â˜† (3 Stars - Average)</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label>Comments</label>
+          <textarea id="reviewerText" required placeholder="Tell future guests about your stay, food, canopy bed, or hospitality..." rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Feedback</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- BRANCHES & MAP LOCATIONS (NO TRACKING COOKIES) -->
+  <section id="locations" class="locations">
+    <div class="container">
+      <div class="section-title">
+        <span>Our 2 Branches</span>
+        <h2>Locations &amp; Contact Details</h2>
+        <p>Select a branch to view its physical address, telephone contact, and clean map preview.</p>
+      </div>
+
+      <div class="branch-cards-grid">
+        <div class="branch-card active" id="cardKibwezi" onclick="switchBranch('kibwezi')">
+          <span style="font-size: 11px; font-weight: 700; color: var(--primary); text-transform: uppercase;">Branch 1</span>
+          <h3>KIBWEZI EASTVIEW Kibwezi</h3>
+          <p>Kibwezi–Kitui Road, Kibwezi, Makueni County</p>
+          <div class="tel"><i class="fa-solid fa-phone"></i> +254 702 121550 / 0700 649406</div>
+        </div>
+
+        <div class="branch-card" id="cardWote" onclick="switchBranch('wote')">
+          <span style="font-size: 11px; font-weight: 700; color: var(--primary); text-transform: uppercase;">Branch 2</span>
+          <h3>KIBWEZI EASTVIEW Wote</h3>
+          <p>Near Kaiti River Bridge, Along Machakos–Wote Road, Wote</p><small style="color: var(--primary); font-weight: 600;">ðŸ“ Kaiti River Bridge</small>
+          <div class="tel"><i class="fa-solid fa-phone"></i> 0745 338 137 / +254 745 338137</div>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div>
+            <span id="contactTagline" style="color: var(--gold); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">Main Branch • Kibwezi</span>
+            <h2 id="contactTitle" style="margin-top: 4px;">KIBWEZI EASTVIEW Kibwezi</h2>
+            <p id="contactHighlight" style="color: #cbd5e1; font-size: 14px;">Heart of Kibwezi Town, 24/7 Hospitality.</p>
+            
+            <div class="contact-info">
+              <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <span id="contactAddress">Kibwezi, Makueni County, Kenya<br><small style="color: #94a3b8;">Kibwezi–Kitui Road</small></span>
+              </div>
+              <div>
+                <i class="fa-solid fa-phone"></i>
+                <span id="contactPhones">
+                  <a href="tel:+254702121550" style="color: var(--gold); font-weight: 700;">+254 702 121550</a><br>
+                  <a href="tel:+254700649406" style="color: #cbd5e1;">+254 700 649406</a>
+                </span>
+              </div>
+              <div>
+                <i class="fa-solid fa-envelope"></i>
+                <span>info@eastviewhotel.co.ke</span>
+              </div>
+              <div>
+                <i class="fa-solid fa-clock"></i>
+                <span>Reception &amp; Service: 24 Hours Daily</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a id="btnCallBranch" href="tel:+254702121550" class="btn btn-primary">
+              <i class="fa-solid fa-phone"></i>
+              Call Branch
+            </a>
+            <a id="btnMapDirections" href="https://share.google/SRZ8uIip68kWtiZJH" target="_blank" class="btn btn-outline">
+              <i class="fa-solid fa-diamond-turn-right"></i>
+              Directions
+            </a>
+          </div>
+        </div>
+
+        <div class="map-box">
+          <iframe id="branchMapFrame" src="https://maps.google.com/maps?q=KIBWEZI+EAST+VIEW&output=embed" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">KIBWEZI EASTVIEW</div>
+          <p style="font-size: 14px; line-height: 1.6; color: #94a3b8;">
+            Comfortable accommodation with canopy beds, delicious dining, conference hall, and warm hospitality across our branches in Kibwezi and Wote (near Kaiti River).
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="rooms.html">Rooms &amp; Rates</a></li>
+            <li><a href="restaurant.html">Food &amp; Catering</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Our 2 Branches</h3>
+          <ul>
+            <li style="margin-bottom: 12px;">
+              <strong style="color: white; display: block;">1. Kibwezi Branch</strong>
+              <span style="color: #94a3b8; font-size: 13px;">Kibwezi–Kitui Road, Kibwezi</span><br>
+              <a href="tel:+254702121550" style="color: var(--gold); font-size: 13px;">+254 702 121550</a>
+            </li>
+            <li>
+              <strong style="color: white; display: block;">2. Wote Branch</strong>
+              <span style="color: #94a3b8; font-size: 13px;">Wote–Machakos Rd, near Kaiti River</span><br>
+              <a href="tel:+254745338137" style="color: var(--gold); font-size: 13px;">0745 338 137</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Front Desk</h3>
+          <ul>
+            <li>Reception: 24 Hours Daily</li>
+            <li>Kitchen: 6:30 AM – 10:30 PM</li>
+            <li><a href="mailto:info@eastviewhotel.co.ke">info@eastviewhotel.co.ke</a></li>
+            <li style="color: #94a3b8; font-size: 12px; margin-top: 10px;">Hotel • Conference • Dining • Garden</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> KIBWEZI EASTVIEW. All Rights Reserved.</p>
+        <p style="margin-top: 8px;">
+          Website Designed &amp; Developed by <span class="dev">Dev Inno</span> |
+          <a href="mailto:enginnocentsafari@gmail.com" style="text-decoration: underline;">enginnocentsafari@gmail.com</a> |
+          <a href="tel:+254794081501" style="text-decoration: underline;">0794 081 501</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <a id="floatingWhatsapp" class="whatsapp-btn" href="https://wa.me/254702121550?text=Hello%20East%20View%20Hotel%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" aria-label="Contact on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <button class="back-top" id="backTop" onclick="scrollToTop()">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+  <script src="script.js"></script>
+</body>
+</html>

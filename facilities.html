@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facilities | KIBWEZI EASTVIEW</title>
+  <meta name="description" content="KIBWEZI EASTVIEW - comfortable accommodation, dining, conference facilities, and warm hospitality in Kibwezi and Wote, Makueni County, Kenya.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- TOP BAR WITH 2 BRANCHES -->
+  <div class="topbar">
+    <div class="container topbar-content">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-weight: 700; color: var(--gold); font-size: 11px; text-transform: uppercase;">Select Branch:</span>
+        <div class="topbar-branch-toggle">
+          <button id="btnBranchKibwezi" class="active" onclick="switchBranch('kibwezi')">Kibwezi (1100, 1500, 2000)</button>
+          <button id="btnBranchWote" onclick="switchBranch('wote')">Wote (2500, 3500)</button>
+        </div>
+      </div>
+      <div class="topbar-links">
+        <a id="topbarPhone" href="tel:+254702121550">
+          <i class="fa-solid fa-phone" style="color: var(--gold); margin-right: 5px;"></i>
+          <span id="topbarPhoneText">+254 702 121550</span>
+        </a>
+        <a href="mailto:info@eastviewhotel.co.ke">
+          <i class="fa-solid fa-envelope" style="color: var(--gold); margin-right: 5px;"></i>
+          info@eastviewhotel.co.ke
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-hotel"></i>
+        </div>
+        <div class="logo-text">
+          <h2>KIBWEZI EASTVIEW</h2>
+          <small id="logoBranchSubtitle">Kibwezi &amp; Wote (near Kaiti River)</small>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="facilities.html">Facilities</a></li>
+        <li><a href="restaurant.html">Food &amp; Catering</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="locations.html">Branches</a></li>
+        <li><a href="booking.html" class="nav-button">Book Now</a></li>
+      </ul>
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-heading"><div class="container"><span>Welcome to Eastview</span><h1>Facilities</h1></div></div>
+
+<section id="facilities" class="facilities">
+    <div class="container">
+      <div class="section-title">
+        <span>Hotel Amenities</span>
+        <h2>Everything You Need For A Relaxing Stay</h2>
+        <p>Equipped facilities across our Kibwezi and Wote branches.</p>
+      </div>
+
+      <div class="facilities-grid">
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-bed"></i></div>
+          <h3>Canopy Bed Rooms</h3>
+          <p>Rooms with mosquito netting across KES 1,100 to 3,500.</p>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-wifi"></i></div>
+          <h3>Free Wi-Fi</h3>
+          <p>High-speed internet in all rooms and common spaces.</p>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-square-parking"></i></div>
+          <h3>Secure Parking</h3>
+          <p>Well-guarded parking bay with 24/7 security watch.</p>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-utensils"></i></div>
+          <h3>Food &amp; Catering</h3>
+          <p>Fresh whole tilapia, grills, stews, and buffet catering.</p>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-users"></i></div>
+          <h3>Conference Hall</h3>
+          <p>Equipped meeting space with screen for corporate seminars.</p>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-tree"></i></div>
+          <h3>Garden Wildlife</h3>
+          <p>Serene courtyard garden with zebra &amp; rhino sculptures.</p>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-bell-concierge"></i></div>
+          <h3>24/7 Front Desk</h3>
+          <p>Prompt reception, assistance, and room delivery.</p>
+        </div>
+        <div class="facility-card">
+          <div class="facility-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3>24/7 Security</h3>
+          <p>Round-the-clock peace of mind and compound safety.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">KIBWEZI EASTVIEW</div>
+          <p style="font-size: 14px; line-height: 1.6; color: #94a3b8;">
+            Comfortable accommodation with canopy beds, delicious dining, conference hall, and warm hospitality across our branches in Kibwezi and Wote (near Kaiti River).
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="rooms.html">Rooms &amp; Rates</a></li>
+            <li><a href="restaurant.html">Food &amp; Catering</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Our 2 Branches</h3>
+          <ul>
+            <li style="margin-bottom: 12px;">
+              <strong style="color: white; display: block;">1. Kibwezi Branch</strong>
+              <span style="color: #94a3b8; font-size: 13px;">Kibwezi–Kitui Road, Kibwezi</span><br>
+              <a href="tel:+254702121550" style="color: var(--gold); font-size: 13px;">+254 702 121550</a>
+            </li>
+            <li>
+              <strong style="color: white; display: block;">2. Wote Branch</strong>
+              <span style="color: #94a3b8; font-size: 13px;">Wote–Machakos Rd, near Kaiti River</span><br>
+              <a href="tel:+254745338137" style="color: var(--gold); font-size: 13px;">0745 338 137</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Front Desk</h3>
+          <ul>
+            <li>Reception: 24 Hours Daily</li>
+            <li>Kitchen: 6:30 AM – 10:30 PM</li>
+            <li><a href="mailto:info@eastviewhotel.co.ke">info@eastviewhotel.co.ke</a></li>
+            <li style="color: #94a3b8; font-size: 12px; margin-top: 10px;">Hotel • Conference • Dining • Garden</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> KIBWEZI EASTVIEW. All Rights Reserved.</p>
+        <p style="margin-top: 8px;">
+          Website Designed &amp; Developed by <span class="dev">Dev Inno</span> |
+          <a href="mailto:enginnocentsafari@gmail.com" style="text-decoration: underline;">enginnocentsafari@gmail.com</a> |
+          <a href="tel:+254794081501" style="text-decoration: underline;">0794 081 501</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <a id="floatingWhatsapp" class="whatsapp-btn" href="https://wa.me/254702121550?text=Hello%20East%20View%20Hotel%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" aria-label="Contact on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <button class="back-top" id="backTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food & Catering | KIBWEZI EASTVIEW</title>
+  <meta name="description" content="KIBWEZI EASTVIEW - comfortable accommodation, dining, conference facilities, and warm hospitality in Kibwezi and Wote, Makueni County, Kenya.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- TOP BAR WITH 2 BRANCHES -->
+  <div class="topbar">
+    <div class="container topbar-content">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-weight: 700; color: var(--gold); font-size: 11px; text-transform: uppercase;">Select Branch:</span>
+        <div class="topbar-branch-toggle">
+          <button id="btnBranchKibwezi" class="active" onclick="switchBranch('kibwezi')">Kibwezi (1100, 1500, 2000)</button>
+          <button id="btnBranchWote" onclick="switchBranch('wote')">Wote (2500, 3500)</button>
+        </div>
+      </div>
+      <div class="topbar-links">
+        <a id="topbarPhone" href="tel:+254702121550">
+          <i class="fa-solid fa-phone" style="color: var(--gold); margin-right: 5px;"></i>
+          <span id="topbarPhoneText">+254 702 121550</span>
+        </a>
+        <a href="mailto:info@eastviewhotel.co.ke">
+          <i class="fa-solid fa-envelope" style="color: var(--gold); margin-right: 5px;"></i>
+          info@eastviewhotel.co.ke
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-hotel"></i>
+        </div>
+        <div class="logo-text">
+          <h2>KIBWEZI EASTVIEW</h2>
+          <small id="logoBranchSubtitle">Kibwezi &amp; Wote (near Kaiti River)</small>
+        </div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="facilities.html">Facilities</a></li>
+        <li><a href="restaurant.html">Food &amp; Catering</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="locations.html">Branches</a></li>
+        <li><a href="booking.html" class="nav-button">Book Now</a></li>
+      </ul>
+      <div class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <div class="page-heading"><div class="container"><span>Welcome to Eastview</span><h1>Food & Catering</h1></div></div>
+
+<section id="restaurant" class="restaurant">
+    <div class="container">
+      <div class="restaurant-grid">
+        <div class="restaurant-img-box">
+          <img src="images/image-012.jpg" alt="Delicious Food &amp; Buffet Catering">
+          <div class="restaurant-img-caption">
+            <h4 style="font-size: 20px;">Fresh Banquet Buffet &amp; Dining</h4>
+            <p style="font-size: 13px; color: #e2e8f0;">Succulent chicken, whole tilapia, beef stew, rice dishes &amp; vegetables.</p>
+          </div>
+        </div>
+        <div>
+          <span style="color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 12px;">Delicious Dining &amp; Catering</span>
+          <h2 style="font-size: 38px; margin: 10px 0 16px;">Good Food. Great Moments.</h2>
+          <p style="color: var(--grey); font-size: 15px;">Enjoy freshly prepared Kenyan meals, our signature whole lake tilapia, pan-fried mbuzi, and full banquet catering for events and meetings.</p>
+          
+          <ul class="food-feature-list">
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <strong style="color: var(--dark);">Signature Whole Tilapia with Fresh Greens</strong>
+                <p style="color: var(--grey); font-size: 13px;">Fresh lake tilapia fried or wet-fried with rich tomato salsa and sautÃ©ed vegetables.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <strong style="color: var(--dark);">Nyama Choma &amp; Mbuzi Fry Specials</strong>
+                <p style="color: var(--grey); font-size: 13px;">Tender goat meat pan-fried with onions, cilantro, ugali, and fresh kachumbari.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <strong style="color: var(--dark);">Banquet &amp; Event Buffet Catering</strong>
+                <p style="color: var(--grey); font-size: 13px;">Full event catering service for seminars, family gatherings, conferences, and tour groups.</p>
+              </div>
+            </li>
+            <li>
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <strong style="color: var(--dark);">Breakfast &amp; Spiced African Masala Tea</strong>
+                <p style="color: var(--grey); font-size: 13px;">Hot breakfast cooked to order, chilled fresh fruit juices, and fragrant milk tea.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div style="margin-top: 25px;">
+            <a href="javascript:void(0)" onclick="orderDiningOnWhatsApp()" class="btn btn-primary">
+              <i class="fa-brands fa-whatsapp"></i>
+              Order Food / Inquire on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">KIBWEZI EASTVIEW</div>
+          <p style="font-size: 14px; line-height: 1.6; color: #94a3b8;">
+            Comfortable accommodation with canopy beds, delicious dining, conference hall, and warm hospitality across our branches in Kibwezi and Wote (near Kaiti River).
+          </p>
+        </div>
+
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="rooms.html">Rooms &amp; Rates</a></li>
+            <li><a href="restaurant.html">Food &amp; Catering</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Our 2 Branches</h3>
+          <ul>
+            <li style="margin-bottom: 12px;">
+              <strong style="color: white; display: block;">1. Kibwezi Branch</strong>
+              <span style="color: #94a3b8; font-size: 13px;">Kibwezi–Kitui Road, Kibwezi</span><br>
+              <a href="tel:+254702121550" style="color: var(--gold); font-size: 13px;">+254 702 121550</a>
+            </li>
+            <li>
+              <strong style="color: white; display: block;">2. Wote Branch</strong>
+              <span style="color: #94a3b8; font-size: 13px;">Wote–Machakos Rd, near Kaiti River</span><br>
+              <a href="tel:+254745338137" style="color: var(--gold); font-size: 13px;">0745 338 137</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Front Desk</h3>
+          <ul>
+            <li>Reception: 24 Hours Daily</li>
+            <li>Kitchen: 6:30 AM – 10:30 PM</li>
+            <li><a href="mailto:info@eastviewhotel.co.ke">info@eastviewhotel.co.ke</a></li>
+            <li style="color: #94a3b8; font-size: 12px; margin-top: 10px;">Hotel • Conference • Dining • Garden</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> KIBWEZI EASTVIEW. All Rights Reserved.</p>
+        <p style="margin-top: 8px;">
+          Website Designed &amp; Developed by <span class="dev">Dev Inno</span> |
+          <a href="mailto:enginnocentsafari@gmail.com" style="text-decoration: underline;">enginnocentsafari@gmail.com</a> |
+          <a href="tel:+254794081501" style="text-decoration: underline;">0794 081 501</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <a id="floatingWhatsapp" class="whatsapp-btn" href="https://wa.me/254702121550?text=Hello%20East%20View%20Hotel%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" aria-label="Contact on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+  <button class="back-top" id="backTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script src="script.js"></script>
+</body>
+</html>
