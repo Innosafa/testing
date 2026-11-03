@@ -40,10 +40,23 @@ const branches = {
   }
 };
 
-// The photos are stored in the repository root, not in an images/ directory.
-// Keep older page references working by resolving those URLs to the actual files.
+// Repository photos are in the site root, not in an images/ directory.
 function resolveImagePath(path) {
-  return typeof path === 'string' ? path.replace(/^images\//, '') : path;
+  if (typeof path !== 'string') return path;
+  return path.replace(/^images\//, '');
+}
+
+function setImageSource(image, path) {
+  const file = resolveImagePath(path);
+  if (!file) return;
+
+  // Use the Pages site first, then fall back to the repository's raw asset if
+  // Pages returns a missing-image response (for example during deployment).
+  image.onerror = function () {
+    image.onerror = null;
+    image.src = 'https://raw.githubusercontent.com/Innosafa/testing/main/' + encodeURIComponent(file);
+  };
+  image.src = file;
 }
 
 let currentBranchKey = 'kibwezi';
@@ -87,7 +100,7 @@ function switchBranch(key) {
   if (whatsapp) whatsapp.href = 'https://wa.me/' + b.phone.replace('+', '') + '?text=' + encodeURIComponent('Hello East View Hotel, I would like to make an enquiry.');
 
   const preview = document.getElementById('heroPreviewImg');
-  if (preview) preview.src = resolveImagePath(b.previewImg);
+  if (preview) setImageSource(preview, b.previewImg);
   setText('heroPreviewTitle', b.previewTitle);
   setText('heroPreviewDesc', b.previewDesc);
 
@@ -190,7 +203,7 @@ function orderDiningOnWhatsApp() {
 
 function openLightbox(src, title, desc) {
   const image = document.getElementById('lightboxImg');
-  if (image) image.src = resolveImagePath(src);
+  if (image) setImageSource(image, src);
   setText('lightboxTitle', title);
   setText('lightboxDesc', desc);
   document.getElementById('lightboxModal')?.classList.add('active');
@@ -259,9 +272,9 @@ if (document.getElementById('bookingBranch')) {
   calculateBookingTotal();
 }
 
-// Resolve static image references across all pages (including hero backgrounds).
+// Correct legacy image paths, and configure a raw-file fallback for each photo.
 document.querySelectorAll('img[src]').forEach(image => {
-  image.src = resolveImagePath(image.getAttribute('src'));
+  setImageSource(image, image.getAttribute('src'));
 });
 document.querySelectorAll('[style*="images/"]').forEach(element => {
   element.style.backgroundImage = element.style.backgroundImage.replace(/images\//g, '');
